@@ -8,6 +8,7 @@ interface PartnerProps {
 export const Partner = ({ name, logo }: PartnerProps) => {
   return (
     <Box
+      aria-label={name}
       sx={{
         display: 'flex',
         alignItems: 'center',

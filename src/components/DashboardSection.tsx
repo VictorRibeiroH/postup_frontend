@@ -2,7 +2,6 @@ import { Box, Button, Container, Typography } from '@mui/material';
 import { MetricCard } from './MetricCard';
 import { DateRangePicker } from './DateRangePicker';
 import { DashboardCharts } from './DashboardCharts';
-import { useState } from 'react';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
@@ -13,13 +12,7 @@ interface DateRange {
 }
 
 export const DashboardSection = () => {
-  const [dateRange, setDateRange] = useState<DateRange>({
-    start: new Date(2024, 3, 14), // 14 de Abril de 2024
-    end: new Date(2024, 4, 3)     // 3 de Maio de 2024
-  });
-
   const handleDateRangeChange = (newRange: DateRange) => {
-    setDateRange(newRange);
     // Aqui você pode implementar a lógica para atualizar os dados baseado no período
     console.log('Novo período:', {
       inicio: format(newRange.start, 'dd/MM/yyyy', { locale: ptBR }),
